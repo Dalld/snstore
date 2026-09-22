@@ -1,0 +1,18 @@
+/*
+Theme Name: SN Store
+Theme URI: https://example.com/snstore
+Author: SN Store
+Author URI: https://example.com
+Description: Universal black & white Apple-style WooCommerce template for Storefront. Homepage hero carousel + configurable sections, policy pages with live site info, Buy Now checkout, search overlay, auto blog with live product tokens. Built to be reused across many stores.
+Version: 1.1.13
+Requires at least: 6.0
+Tested up to: 7.1
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: snstore
+Template: storefront
+Tags: e-commerce, light, white, one-column, two-columns, custom-menu, featured-images
+*/
+
+/* Child of Storefront — all styles live in assets/css/snstore.css */

@@ -1,0 +1,9 @@
+# Versioned asset copies (generated per release for CDN cache-busting;
+# the theme falls back to canonical files + ?ver= automatically)
+/assets/css/snstore-*.css
+/assets/js/snstore-*.js
+
+# OS junk
+Thumbs.db
+.DS_Store
+Desktop.ini

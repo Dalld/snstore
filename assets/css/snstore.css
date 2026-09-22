@@ -613,7 +613,8 @@ ul.products::before, ul.products::after { content: none !important; display: non
 }
 .sn-pdp-thumb.is-active { border-color: var(--sn-text); }
 .sn-pdp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.sn-pdp-panel { padding-top: 6px; position: sticky; top: var(--sn-header-h); }
+.sn-pdp-main .sn-pdp-panel { align-self: start; padding-top: 0; }
+.sn-pdp-panel-inner { position: sticky; top: 102px; }
 .sn-pdp-price { margin: 0 0 14px; }
 .sn-pdp-main .sn-pdp-panel .sn-pdp-price .price { margin: 0; }
 .sn-pdp-title { font-size: clamp(2.4rem, 3.2vw, 3.2rem); margin: 0 0 10px; }

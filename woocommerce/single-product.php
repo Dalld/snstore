@@ -94,42 +94,44 @@ $sn_bread[] = array( $product->get_name(), get_permalink( $product->get_id() ) )
 			</div>
 
 			<div class="sn-pdp-panel">
-				<h1 class="sn-pdp-title"><?php the_title(); ?></h1>
+				<div class="sn-pdp-panel-inner">
+					<h1 class="sn-pdp-title"><?php the_title(); ?></h1>
 
-				<?php if ( $product->get_review_count() > 0 ) : ?>
-					<div class="sn-pdp-rating">
-						<span class="sn-card-stars">
-							<?php
-							$sn_stars = max( 1, (int) round( (float) $product->get_average_rating() ) );
-							for ( $sn_s = 1; $sn_s <= 5; $sn_s++ ) {
-								echo '<span class="sn-star' . ( $sn_s <= $sn_stars ? ' is-on' : '' ) . '">&#9733;</span>';
-							}
-							?>
-						</span>
-						<a class="sn-pdp-rating-link" href="#sn-reviews">
-							<?php
-							printf(
-								/* translators: %s: review count */
-								_n( '%s review', '%s reviews', $product->get_review_count(), 'snstore' ),
-								esc_html( number_format_i18n( $product->get_review_count() ) )
-							);
-							?>
-						</a>
+					<?php if ( $product->get_review_count() > 0 ) : ?>
+						<div class="sn-pdp-rating">
+							<span class="sn-card-stars">
+								<?php
+								$sn_stars = max( 1, (int) round( (float) $product->get_average_rating() ) );
+								for ( $sn_s = 1; $sn_s <= 5; $sn_s++ ) {
+									echo '<span class="sn-star' . ( $sn_s <= $sn_stars ? ' is-on' : '' ) . '">&#9733;</span>';
+								}
+								?>
+							</span>
+							<a class="sn-pdp-rating-link" href="#sn-reviews">
+								<?php
+								printf(
+									/* translators: %s: review count */
+									_n( '%s review', '%s reviews', $product->get_review_count(), 'snstore' ),
+									esc_html( number_format_i18n( $product->get_review_count() ) )
+								);
+								?>
+							</a>
+						</div>
+					<?php endif; ?>
+
+					<div class="sn-pdp-price"><?php woocommerce_template_single_price(); ?></div>
+					<div class="sn-pdp-excerpt"><?php woocommerce_template_single_excerpt(); ?></div>
+
+					<div class="sn-pdp-form">
+						<?php woocommerce_template_single_add_to_cart(); ?>
 					</div>
-				<?php endif; ?>
 
-				<div class="sn-pdp-price"><?php woocommerce_template_single_price(); ?></div>
-				<div class="sn-pdp-excerpt"><?php woocommerce_template_single_excerpt(); ?></div>
-
-				<div class="sn-pdp-form">
-					<?php woocommerce_template_single_add_to_cart(); ?>
+					<ul class="sn-pdp-usps">
+						<li><?php sn_icon( 'truck', 18 ); ?><?php esc_html_e( 'Free shipping on qualifying orders', 'snstore' ); ?></li>
+						<li><?php sn_icon( 'return', 18 ); ?><?php esc_html_e( '30-day easy returns', 'snstore' ); ?></li>
+						<li><?php sn_icon( 'shield', 18 ); ?><?php esc_html_e( 'Secure checkout', 'snstore' ); ?></li>
+					</ul>
 				</div>
-
-				<ul class="sn-pdp-usps">
-					<li><?php sn_icon( 'truck', 18 ); ?><?php esc_html_e( 'Free shipping on qualifying orders', 'snstore' ); ?></li>
-					<li><?php sn_icon( 'return', 18 ); ?><?php esc_html_e( '30-day easy returns', 'snstore' ); ?></li>
-					<li><?php sn_icon( 'shield', 18 ); ?><?php esc_html_e( 'Secure checkout', 'snstore' ); ?></li>
-				</ul>
 			</div>
 		</div>
 	<?php endwhile; ?>

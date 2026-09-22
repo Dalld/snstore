@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SNSTORE_VERSION', '1.1.13' );
+define( 'SNSTORE_VERSION', '1.1.14' );
 
 require_once get_stylesheet_directory() . '/inc/sn-site-info.php';
 require_once get_stylesheet_directory() . '/inc/sn-seo.php';
